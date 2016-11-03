@@ -41,7 +41,7 @@ app.post('/webhook/', function(req, res){
         let text = event.message.text
         sendTextMessage(sender, "How do you feel today?")
         sendTextMessage(sender, "😀 😐 😟 " )
-        sendGenericMessage(sender)
+        //sendGenericMessage(sender)
       }
     }
     res.sendStatus(200)
@@ -66,6 +66,11 @@ function sendTextMessage(sender, text) {
             console.log('Error: ', response.body.error)
         }
     })
+}
+
+function sendDailyText(sender){
+  sendTextMessage(sender, "How do you feel today?")
+  sendTextMessage(sender, "😀 😐 😟 " )
 }
 
 function sendGenericMessage(sender) {
