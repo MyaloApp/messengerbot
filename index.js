@@ -70,6 +70,17 @@ function sendTextMessage(sender, text) {
 function sendDailyText(sender){
   sendTextMessage(sender, "How do you feel today?")
   sendTextMessage(sender, "😀 😐 😟 " )
+  let emotional_response = req.body.entry[0].messaging[i]
+  if(event.message && event.message.text == "😀"){
+    console.log('smiley face')
+    sendTextMessage(sender, "Tell me why you're happy!")
+  }else if(event.message && event.message.text == "😐")
+    console.log('frowny face')
+    sendTextMessage(sender, "What's up?")
+  }else if(event.message && event.message.text == "😟")
+    console.log('sad face')
+    sendTextMessage(sender, "Oh no! What happened today?")
+  }
 }
 
 function sendGenericMessage(sender) {
