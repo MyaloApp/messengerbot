@@ -36,11 +36,9 @@ app.post('/webhook/', function(req, res){
     let messaging_events = req.body.entry[0].messaging
     for(let i = 0; i < messaging_events.length; i++){
       let event = req.body.entry[0].messaging[i]
-      console.log(event.message.text)
       let sender = event.sender.id
       if(event.message && event.message.text){
         let text = event.message.text
-        console.log(text)
         sendDailyText(sender)
         //sendGenericMessage(sender)
       }
