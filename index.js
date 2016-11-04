@@ -68,8 +68,9 @@ function sendTextMessage(sender, text) {
 }
 
 function sendDailyText(sender){
-  sendTextMessage(sender, "How do you feel today?")
   sendTextMessage(sender, "😀 😐 😟 " )
+  sendTextMessage(sender, "How do you feel today?")
+  
   // let emotional_response = req.body.entry[0].messaging[i]
   // if(event.message && event.message.text == "😀"){
   //   console.log('smiley face')
